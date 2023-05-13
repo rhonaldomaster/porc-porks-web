@@ -1,0 +1,30 @@
+.footer {
+  background-color: var(--color-dark-bg);
+  color: var(--color-accent-1);
+  padding: 20px 0;
+}
+
+.footer__logo {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.footer__featured-link,
+.footer__navigation-link {
+  color: var(--color-accent-1);
+}
+
+.footer__menu {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    padding: 60px 0 40px;
+  }
+
+  .footer__menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
