@@ -28,14 +28,13 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <link rel="preload" as="style" href="assets/css/swiper-bundle.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" as="style" href="assets/css/swiper-custom.css" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-custom.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/product.css">
     <link rel="preload" as="style" href="assets/css/footer.css" onload="this.onload=null;this.rel='stylesheet'">
 
     <noscript>
-      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-      <link rel="stylesheet" href="assets/css/swiper-custom.css">
       <link rel="stylesheet" href="assets/css/footer.css">
     </noscript>
   </head>
@@ -117,190 +116,112 @@
       </div>
     </header>
     <main>
-      <section>
-        <h2 class="sr-only">Banner principal</h2>
-        <div class="swiper js-swiper-home">
-          <ul class="swiper-wrapper">
-            <li class="swiper-slide">
-              <picture>
-                <source media="(min-width: 1024px)" srcset="https://placehold.co/1440x700">
-                <img
-                  src="https://placehold.co/768x576"
-                  alt="Lo mejor en carnes lo encuentras en Porc Pork's"
-                  height="576"
-                  width="768"
-                  class="main-banner__image"
-                  loading="eager"
-                >
-              </picture>
-            </li>
-            <li class="swiper-slide">
-              <picture>
-                <source media="(min-width: 1024px)" srcset="https://placehold.co/1440x700">
-                <img
-                  src="https://placehold.co/768x576"
-                  alt="Lo mejor en carnes lo encuentras en Porc Pork's"
-                  height="556"
-                  width="768"
-                  class="main-banner__image"
-                  loading="eager"
-                >
-              </picture>
-            </li>
-            <li class="swiper-slide">
-              <picture>
-                <source media="(min-width: 1024px)" srcset="https://placehold.co/1440x700">
-                <img
-                  src="https://placehold.co/768x576"
-                  alt="Lo mejor en carnes lo encuentras en Porc Pork's"
-                  height="556"
-                  width="768"
-                  class="main-banner__image"
-                  loading="eager"
-                >
-              </picture>
-            </li>
-          </ul>
-          <div class="swiper-pagination js-swiper-pagination"></div>
-          <button class="swiper-button swiper-button-prev js-swiper-button-prev"></button>
-          <button class="swiper-button swiper-button-next js-swiper-button-next"></button>
+      <section class="container">
+        <div class="row product">
+          <div class="col-12 col-md-8">
+            <div class="row">
+              <div class="col-12 col-md-3">
+                <div class="swiper swiper--thumbs swiper--vertical-thumbs js-swiper-thumbs">
+                  <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <img src="assets/images/carne-1.png" alt="Aqui podemos ver Solomillo Entero" loading="lazy">
+                    </li>
+                    <li class="swiper-slide">
+                      <img src="assets/images/carne-1.png" alt="Aqui podemos ver Solomillo Entero" loading="lazy">
+                    </li>
+                    <li class="swiper-slide">
+                      <img src="assets/images/carne-1.png" alt="Aqui podemos ver Solomillo Entero" loading="lazy">
+                    </li>
+                  </ul>
+                  <button class="swiper-button swiper-button-prev js-swiper-button-prev"></button>
+                  <button class="swiper-button swiper-button-next js-swiper-button-next"></button>
+                </div>
+              </div>
+              <div class="col-12 col-md-9">
+                <div class="swiper js-swiper-product">
+                  <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <picture>
+                        <source media="(min-width: 768px)" srcset="assets/images/carne-1.png">
+                        <img src="assets/images/carne-1.png" class="product__image" alt="Aqui podemos ver Solomillo Entero" height="400" width="400" loading="eager">
+                      </picture>
+                    </li>
+                    <li class="swiper-slide">
+                      <picture>
+                        <source media="(min-width: 768px)" srcset="assets/images/carne-1.png">
+                        <img src="assets/images/carne-1.png" class="product__image" alt="Aqui podemos ver Solomillo Entero" height="400" width="400" loading="lazy">
+                      </picture>
+                    </li>
+                    <li class="swiper-slide">
+                      <picture>
+                        <source media="(min-width: 768px)" srcset="assets/images/carne-1.png">
+                        <img src="assets/images/carne-1.png" class="product__image" alt="Aqui podemos ver Solomillo Entero" height="400" width="400" loading="lazy">
+                      </picture>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <h2 class="product__title">Solomillo Entero</h2>
+            <p class="sr-only">50000 pesos</p>
+            <p class="product__price" aria-hidden="true">$50.000 <span class="product__unit">(paquete)</span></p>
+            <p>Delicioso solomillo de carne de alta calidad. Un solomillo normalmente tiene un peso de dos kilogramos</p>
+            <form action="/cart/add" method="post">
+              <label for="quantity-input">Cantidad:</label>
+              <input type="number" id="quantity-input" name="quantity" min="1" max="9" step="1" value="1">
+              <button class="button button--primary full-width uppercase product__add-to-cart">Agregar al carrito</button>
+            </form>
+            <div class="product__usage">
+              <details>
+                <summary>Preparacion</summary>
+                <p>El lomo entero es un alimento muy delicioso para darte un gusto a ti mismo, a tu familia y amigos, al preparar un lomo entero. Necesitarás de cuatro a cinco libras de carne para alimentar a 10-12 personas. Antes de mezclarlo con otros ingredientes, debes hervir la carne a 260°C durante 15 minutos. Después, mézclala con otros ingredientes y ásala durante 10 minutos a 162°C para las primeras libras. Después de completar todo esto, puedes servirlo con salsa y otros ingredientes.</p>
+              </details>
+              <details>
+                <summary>Usos</summary>
+                <ul>
+                  <li>Asar</li>
+                  <li>Freir</li>
+                  <li>Hornear</li>
+                </ul>
+              </details>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="home-categories container">
-        <h2 class="sr-only">Categorias</h2>
-        <ul class="row gy-5">
-          <li class="col-6 col-md-4">
-            <article class="category-card">
-              <div class="category-card__image" style="background-image: url(https://placehold.co/350x280);">
-                <a href="/collections/cortes-de-cerdo" aria-label="Ver cortes de cerdo" class="category-card__link"></a>
-              </div>
-              <h3 class="category-card__title">Cortes de cerdo</h3>
+      <section class="container related-products">
+        <h3 class="align-center related-products__title">Productos relacionados</h3>
+        <ul class="row">
+          <li class="col-6 col-md-3">
+            <article class="product-card">
+              <a href="/products/bondiola-de-cerdo" aria-label="Compra bondiola de cerdo" class="product-card__link"></a>
+              <div class="product-card__image product-card__image--product" style="background-image: url(https://placehold.co/310x310);"></div>
+              <h3 class="product-card__title">Bondiola de cerdo</h3>
             </article>
           </li>
-          <li class="col-6 col-md-4">
-            <article class="category-card">
-              <div class="category-card__image" style="background-image: url(https://placehold.co/350x280);">
-                <a href="/collections/cortes-de-res" aria-label="Ver cortes de res" class="category-card__link"></a>
-              </div>
-              <h3 class="category-card__title">Cortes de res</h3>
+          <li class="col-6 col-md-3">
+            <article class="product-card">
+              <a href="/products/bondiola-de-cerdo" aria-label="Compra bondiola de cerdo" class="product-card__link"></a>
+              <div class="product-card__image product-card__image--product" style="background-image: url(https://placehold.co/310x310);"></div>
+              <h3 class="product-card__title">Bondiola de cerdo</h3>
             </article>
           </li>
-          <li class="col-6 col-md-4">
-            <article class="category-card">
-              <div class="category-card__image" style="background-image: url(https://placehold.co/350x280);">
-                <a href="/collections/embutidos" aria-label="Ver embutidos" class="category-card__link"></a>
-              </div>
-              <h3 class="category-card__title">Embutidos</h3>
+          <li class="col-6 col-md-3">
+            <article class="product-card">
+              <a href="/products/bondiola-de-cerdo" aria-label="Compra bondiola de cerdo" class="product-card__link"></a>
+              <div class="product-card__image product-card__image--product" style="background-image: url(https://placehold.co/310x310);"></div>
+              <h3 class="product-card__title">Bondiola de cerdo</h3>
+            </article>
+          </li>
+          <li class="col-6 col-md-3">
+            <article class="product-card">
+              <a href="/products/bondiola-de-cerdo" aria-label="Compra bondiola de cerdo" class="product-card__link"></a>
+              <div class="product-card__image product-card__image--product" style="background-image: url(https://placehold.co/310x310);"></div>
+              <h3 class="product-card__title">Bondiola de cerdo</h3>
             </article>
           </li>
         </ul>
-      </section>
-      <section class="home-featured">
-        <div class="container">
-          <h2 class="home-featured__title align-center">Productos destacados</h2>
-          <ul class="row">
-            <li class="col-6 col-md-3">
-              <article class="category-card">
-                <a href="/products/bondiola-de-cerdo" aria-label="Compra bondiola de cerdo" class="category-card__link"></a>
-                <div class="category-card__image category-card__image--product" style="background-image: url(https://placehold.co/310x310);"></div>
-                <h3 class="category-card__title">Bondiola de cerdo</h3>
-              </article>
-            </li>
-            <li class="col-6 col-md-3">
-              <article class="category-card">
-                <a href="/products/bondiola-de-cerdo" aria-label="Compra bondiola de cerdo" class="category-card__link"></a>
-                <div class="category-card__image category-card__image--product" style="background-image: url(https://placehold.co/310x310);"></div>
-                <h3 class="category-card__title">Bondiola de cerdo</h3>
-              </article>
-            </li>
-            <li class="col-6 col-md-3">
-              <article class="category-card">
-                <a href="/products/bondiola-de-cerdo" aria-label="Compra bondiola de cerdo" class="category-card__link"></a>
-                <div class="category-card__image category-card__image--product" style="background-image: url(https://placehold.co/310x310);"></div>
-                <h3 class="category-card__title">Bondiola de cerdo</h3>
-              </article>
-            </li>
-            <li class="col-6 col-md-3">
-              <article class="category-card">
-                <a href="/products/bondiola-de-cerdo" aria-label="Compra bondiola de cerdo" class="category-card__link"></a>
-                <div class="category-card__image category-card__image--product" style="background-image: url(https://placehold.co/310x310);"></div>
-                <h3 class="category-card__title">Bondiola de cerdo</h3>
-              </article>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="home-customers">
-        <h2 class="sr-only">Nuestros clientes</h2>
-        <div class="container">
-          <div class="row gy-3">
-            <div class="col-6 col-md-3 align-center">
-              <picture>
-                <source media="(min-width: 1024px)" srcset="https://placehold.co/240x240">
-                <img src="https://placehold.co/190x190" class="home-customers__featured" height="190" width="190" alt="Cliente 1" loading="lazy">
-              </picture>
-            </div>
-            <div class="col-6 col-md-3 align-center">
-              <picture>
-                <source media="(min-width: 1024px)" srcset="https://placehold.co/240x240">
-                <img src="https://placehold.co/190x190" class="home-customers__featured" height="190" width="190" alt="Cliente 2" loading="lazy">
-              </picture>
-            </div>
-            <div class="col-6 col-md-3 align-center">
-              <picture>
-                <source media="(min-width: 1024px)" srcset="https://placehold.co/240x240">
-                <img src="https://placehold.co/190x190" class="home-customers__featured" height="190" width="190" alt="Cliente 3" loading="lazy">
-              </picture>
-            </div>
-            <div class="col-6 col-md-3 align-center">
-              <picture>
-                <source media="(min-width: 1024px)" srcset="https://placehold.co/240x240">
-                <img src="https://placehold.co/190x190" class="home-customers__featured" height="190" width="190" alt="Cliente 4" loading="lazy">
-              </picture>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="home-delivery">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <h2 class="home-delivery__title">Entregas a domicilio</h2>
-              <p class="home-delivery__text">En Pork Pork's, sabemos lo importante que es disfrutar de una buena comida sin salir de casa. Por eso, nos complace ofrecerte nuestro servicio de entrega a domicilio de los más exquisitos cortes de carne y embutidos. ¡Prepárate para vivir una experiencia gastronómica inigualable sin tener que moverte!</p>
-              <p class="home-delivery__text">Opciones de pago:</p>
-              <ul>
-                <li>Tarjetas de credito/debito</li>
-                <li>Pago contra entrega (efectivo)</li>
-              </ul>
-              <div class="row gy-2">
-                <div class="col-6 col-md-3 align-center">
-                  <picture>
-                    <source media="(min-width: 1024px)" srcset="https://placehold.co/120x120">
-                    <img src="https://placehold.co/190x190" class="home-delivery__featured" height="190" width="190" alt="" loading="lazy">
-                  </picture>
-                </div>
-                <div class="col-6 col-md-3 align-center">
-                  <picture>
-                    <source media="(min-width: 1024px)" srcset="https://placehold.co/120x120">
-                    <img src="https://placehold.co/190x190" class="home-delivery__featured" height="190" width="190" alt="" loading="lazy">
-                  </picture>
-                </div>
-                <div class="col-6 col-md-3 align-center">
-                  <picture>
-                    <source media="(min-width: 1024px)" srcset="https://placehold.co/120x120">
-                    <img src="https://placehold.co/190x190" class="home-delivery__featured" height="190" width="190" alt="" loading="lazy">
-                  </picture>
-                </div>
-                <div class="col-6 col-md-3 align-center">
-                  <picture>
-                    <source media="(min-width: 1024px)" srcset="https://placehold.co/120x120">
-                    <img src="https://placehold.co/190x190" class="home-delivery__featured" height="190" width="190" alt="" loading="lazy">
-                  </picture>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </main>
     <footer class="footer">
@@ -347,10 +268,10 @@
                     s58.3,79.7,66.6,128.4C464.087,225.266,469.287,229.466,475.187,229.466z"/>
                 </svg>
               </div>
-              <div class="col-12 col-md-10">
+              <div class="col-12 col-md-10 desktop-only">
                 <a class="footer__featured-link" href="tel:+3043466228">+57-304 3466228</a>
               </div>
-              <div class="col-12 col-md-2 desktop-only">
+              <div class="col-12 col-md-2">
                 <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="#FFFFFF">
                   <path d="M12 12.5C13.6569 12.5 15 11.1569 15 9.5C15 7.84315 13.6569 6.5 12 6.5C10.3431 6.5 9 7.84315 9 9.5C9 11.1569 10.3431 12.5 12 12.5Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12 22C14 18 20 15.4183 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 15.4183 10 18 12 22Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -405,58 +326,64 @@
     </footer>
     <script type="application/ld+json">
       {
-        "@context" : "https://schema.org",
-        "@type" : "Organization",
-        "name" : "Porc Pork's",
-        "url" : "https://porc-pork.com",
-        "sameAs" : [
-          "https://facebook.com/Porcporkssas",
-          "https://instagram.com/porcporks"
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://porc-porks.com/",
+              "name": "Inicio"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://porc-porks.com/products/solomillo-entero,
+              "name": "Solomillo Entero"
+            }
+          }
         ]
       }
     </script>
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Porc Pork's",
-        "description": "En Porc Pork's ofrecemos una amplia selección de carne fresca y de alta calidad. Nuestro equipo de expertos carniceros se asegura de proporcionar cortes de carne perfectos para cada ocasión.",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Calle 110 No 6 - 335 Metro Parque Bodega 9",
-          "addressLocality": "Barranquilla",
-          "addressRegion": "Atlántico",
-          "postalCode": "080015",
-          "addressCountry": "Colombia"
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Solomillo Entero",
+        "description": "Delicioso solomillo de carne de alta calidad",
+        "image": "assets/images/carne-1.png",
+        "sku": "12345",
+        "brand": {
+          "@type": "Brand",
+          "name": "Pork Pork's"
         },
-        "telephone": "+573043466228",
-        "openingHours": "Mo-Sa 09:00-18:00",
-        "image": "assets/images/logo.png",
-        "priceRange": "$",
-        "paymentAccepted":"Cash, Credit Card",
-        "currenciesAccepted": "COP"
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "name": "Porc Pork's",
-        "url": "https://pork-porks.com",
-        "sameAs": [
-          "https://facebook.com/Porcporkssas",
-          "https://instagram.com/porcporks"
-        ],
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "http://pork-porks.com/search?q={search_term}",
-          "query-input": "required name=search_term"
+        "offers": {
+          "@type": "Offer",
+          "price": "12500",
+          "priceCurrency": "COP",
+          "availability": "https://schema.org/InStock",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Solomillo Entero",
+            "additionalProperty": {
+              "@type": "PropertyValue",
+              "name": "Unit of Measurement",
+              "value": "Pound"
+            }
+          }
+        },
+        "countryOfOrigin": {
+          "@type": "Country",
+          "name": "Colombia"
         }
       }
     </script>
     <script src="assets/scripts/utils.js" defer></script>
     <script src="assets/scripts/main.js" defer></script>
     <script src="assets/scripts/swiper-bundle.min.js" defer></script>
-    <script src="assets/scripts/home.js" defer></script>
+    <script src="assets/scripts/product.js" defer></script>
   </body>
 </html>

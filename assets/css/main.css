@@ -11,7 +11,8 @@
   --color-links: var(--color-primary);
   --color-primary-accent: #D2413E;
 
-  --font-family-base: Arial, Helvetica, sans-serif;
+  --font-family-base: 'Lato', Arial, Helvetica, sans-serif;
+  --font-family-titles: 'Nunito Sans', Arial, Helvetica, sans-serif;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -37,6 +38,16 @@ body {
   line-height: 1.5;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-titles);
+  margin-top: 0;
+}
+
 a {
   color: var(--color-links);
 }
@@ -47,7 +58,9 @@ a:hover {
   text-decoration: underline;
 }
 
+ol,
 ul {
+  padding-inline-start: 10px;
   margin: 0;
 }
 
@@ -87,9 +100,22 @@ img {
   display: none;
 }
 
+.full-width {
+  display: block;
+  width: 100%;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 .row {
   list-style: none;
   padding: 0;
+}
+
+.header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
 
 .header__address {
